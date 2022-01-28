@@ -1,4 +1,6 @@
+
 class GameBoard:
+    # Gameboard initilization
     def __init__(self):
         self.winningRow = 0
         self.winningColumn = 2
@@ -35,7 +37,7 @@ class GameBoard:
         for i in range(len(self.board)):
             for j in range(len(self.board[i])):
                 if i == playerRow and j == playerColumn:
-                    print("P", end="")
+                    print(" P ", end="")
                 else:
                     print(self.board[i][j], end="")
             print("")
@@ -49,4 +51,8 @@ class GameBoard:
     # TODO
     # Return True if the player is in the winning column and row
     # Return False otherwise
-    # def checkWin(self, playerRow, playerColumn):
+    def checkWin(self, playerRow, playerColumn):
+        if(playerRow == 0 and playerColumn == 2):
+            return True
+        else:
+            return False
