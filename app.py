@@ -15,7 +15,7 @@ print("-----------------------------")
 # Create a new GameBoard called board
 board = gameboard.GameBoard()
 # Create a new Player called player starting at position 3,2
-player = player.Player(3, 2)
+player = player.Player(6, 2)
 
 while True:
     board.printBoard(player.rowPosition, player.columnPosition)
