@@ -65,13 +65,16 @@ class GameBoard:
             [" * ", " * ", " * ", " * ", " * ", " * "],
         ]
 
-    def printBoard(self, playerRow, playerColumn):
+    def printBoard(self, playerRow, playerColumn, monsterRow, monsterColumn):
         for i in range(len(self.board)):
             for j in range(len(self.board[i])):
                 if i == playerRow and j == playerColumn:
                     print(" P ", end="")
+                elif i == monsterRow and j == monsterColumn:
+                    print(" M ", end="")
                 else:
                     print(self.board[i][j], end="")
+
             print("")
 
     def checkMove(self, testRow, testColumn):
@@ -85,6 +88,12 @@ class GameBoard:
         if self.board[testRow][testColumn].find("c") != -1:
             self.board[testRow][testColumn] = "   "
             print("You have found a coin!")
+            return True
+        return False
+
+    def checkMonster(self, testRow, testColumn):
+        if self.board[testRow][testColumn].find("M") != -1:
+            print("The Monster ate your coins!")
             return True
         return False
     # TODO
