@@ -14,7 +14,7 @@ class GameBoard:
                 "   ",
                 "   ",
                 "   ",
-                " * ",
+                " * "
             ],
             [
                 # ROW 2
@@ -22,8 +22,8 @@ class GameBoard:
                 "   ",
                 " * ",
                 " * ",
-                "   ",
-                " * ",
+                " c ",
+                " * "
             ],
             [
                 # ROW 3
@@ -32,16 +32,16 @@ class GameBoard:
                 "   ",
                 "   ",
                 " * ",
-                " * ",
+                " * "
             ],
             [
                 # ROW 4
                 " * ",
-                "   ",
+                " c ",
                 " * ",
                 "   ",
                 "   ",
-                " * ",
+                " * "
             ],
             [
                 # ROW 5
@@ -50,16 +50,16 @@ class GameBoard:
                 " * ",
                 " * ",
                 "   ",
-                " * ",
+                " * "
             ],
             [
                 # ROW 6
                 " * ",
+                " c ",
                 "   ",
                 "   ",
                 "   ",
-                "   ",
-                " * ",
+                " * "
             ],
             # ROW 7
             [" * ", " * ", " * ", " * ", " * ", " * "],
@@ -79,10 +79,18 @@ class GameBoard:
             print("Can't move there!")
             return False
         return True
+# Checking to see if user has landed on a coin, if so we change the index value to a space to take the coin away and return true
 
+    def checkCoin(self, testRow, testColumn):
+        if self.board[testRow][testColumn].find("c") != -1:
+            self.board[testRow][testColumn] = "   "
+            print("You have found a coin!")
+            return True
+        return False
     # TODO
     # Return True if the player is in the winning column and row
     # Return False otherwise
+
     def checkWin(self, playerRow, playerColumn):
         if(playerRow == 0 and playerColumn == 2):
             return True

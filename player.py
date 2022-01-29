@@ -2,6 +2,7 @@ class Player:
     def __init__(self, intitalRow, initialColumn):
         self.rowPosition = intitalRow
         self.columnPosition = initialColumn
+        self.coinCount = 0
 
     # TODO
     def moveUp(self):
